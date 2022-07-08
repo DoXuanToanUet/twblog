@@ -1,0 +1,64 @@
+.big-number-bullet:before {
+    content: '0'counter(number-bullet);
+    counter-increment: number-bullet;
+    position: absolute;
+    font-size: 5em;
+    font-weight: bold;
+    top: -90px;
+    left: -50px;
+    color: #2875E9;
+    opacity: .2;
+}
+.big-number-bullet {
+    position: relative;
+}
+.is-dashed {
+    border-color: rgb(217, 221, 224);
+    border-width: 0px 1px 0px 0px;
+    border-style: dashed;
+}
+body{
+    counter-reset: number-bullet;
+}
+.cols-full-5 .col.large-2 {
+    max-width: 20% !important;
+    flex-basis: 20% !important;
+}
+.thin-font, .is-thin {
+    font-weight: 300!important;
+}
+.background-banner-desarrolla .banner-bg {
+    background: transparent linear-gradient(105deg, #6AAEFF 0%, #005EFF 100%) 0% 0% no-repeat padding-box !important;
+}
+.background-banner-desarrolla .banner-bg .bg {
+    background-size: 30% !important;
+    background-position: left bottom !important;
+    background-repeat: no-repeat;
+}
+
+// Contact css
+.wpcf7-form{
+    label{
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    span input,textarea{
+        box-shadow: none;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 22px;
+        color: #33475b;
+        border: 1px solid #cbd6e2;
+        border-radius: 3px;
+        &:focus{
+            border:1px solid rgba(82,168,236,.8);
+            box-shadow: none;
+        }
+    }
+    input[type="submit"]{
+        font-size: 14px;
+        padding: 6px 24px;
+        border-radius: 3px;
+    }
+}

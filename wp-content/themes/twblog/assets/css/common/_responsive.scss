@@ -1,0 +1,35 @@
+@media (max-width: 991px){
+    .wpcf7-form{
+        .col{
+            padding: 0px 15px 0px;
+        }
+    }
+    .cols-full-5 .col.large-2 {
+        max-width: 50% !important;
+        -ms-flex-preferred-size: 50% !important;
+        flex-basis: 50% !important;
+    }
+    .background-circulo-orbital {
+        padding: 0;
+        background: none;
+    }
+}
+
+@media (max-width: 575px){
+    html {
+        font-size: 16px;
+    }
+    .tabbed-content .nav-line-bottom {
+        border-bottom: none;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .cols-full-5 .col.large-2 {
+        max-width: 100% !important;
+        -ms-flex-preferred-size: 100% !important;
+        flex-basis: 100% !important;
+    }
+    .contact .col{
+        padding-bottom: 15px;
+    }
+}

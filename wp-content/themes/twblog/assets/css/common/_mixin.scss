@@ -1,0 +1,63 @@
+// $main_color:#fcde50;
+
+// .blue-border {
+//     border: 5px solid #3A4DCC;
+// }
+
+// body, h1, h2, h3, h4, h5, p, a {
+//     font-family: 'SF Pro Display' !important;
+// }
+// html{
+//     font-size: 22px;
+// }
+
+input[type=email], input[type=date], input[type=search], input[type=number], input[type=text], input[type=tel], input[type=url], input[type=password], textarea, select, .select-resize-ghost, .select2-container .select2-choice, .select2-container .select2-selection{
+    box-shadow: none !important;
+    font-weight: 500;
+    &:focus{
+        border: 1px solid var(--primary-color);
+        color: #495057;
+        background-color: #fff;
+        border-color: #03033f;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(3,3,63,0.25) !important;
+    }
+}
+.d-flex-col{
+    flex-direction: column;
+}
+.d-flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.d-gap{
+    gap: 15px;
+}
+.d-gap-small{
+    gap: 5px;
+}
+.d-flex-wrap{
+    flex-wrap: wrap;
+}
+.d-align-middle{
+    align-items: center;
+}
+.d-align-spacebt{
+    justify-content: space-between;
+}
+.d-align-center{
+    justify-content: center;
+}
+.p-1{
+    padding: 0.5rem;
+}
+.p-2{
+    padding: 1rem;
+}
+::selection {
+    background: #7952b3;
+    color: #fff;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "GaramondPremrPro" !important;
+}
