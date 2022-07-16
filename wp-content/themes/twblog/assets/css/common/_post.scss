@@ -1,0 +1,24 @@
+.post-preview__content{
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+}
+.post-preview__thumbnail{
+    overflow: hidden;
+    img{
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+    &:hover{
+        img{
+            transform: scale(1.05);
+        }
+    }
+}
+.post-preview{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
