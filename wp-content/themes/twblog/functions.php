@@ -5,7 +5,8 @@
     wp_enqueue_style('MainCss', get_template_directory_uri() . '/assets/css/custom.css', array(), $version, 'all');
 
     wp_enqueue_script('BootstrapJs', get_template_directory_uri() . '/assets/plugins/bootstrap/bootstrap.bundle.min.js', array(), $version, true);
-   
+    wp_enqueue_script('MainJs', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true);
+    wp_enqueue_script('jquery-ui-draggable');
 }
 
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
@@ -22,3 +23,4 @@ function init_theme(){
 add_action('init', 'init_theme');
 
 require get_template_directory() . '/inc-function/inc-devpost.php';
+require get_template_directory() . '/inc-function/inc-archivepost.php';

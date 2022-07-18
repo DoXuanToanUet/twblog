@@ -1,6 +1,9 @@
 h2{
     font-size: 1.25rem;
 }
+h1{
+    font-size: 2rem;
+}
 img{
     max-width: 100%;
     height: auto;
@@ -20,4 +23,16 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap');
+body{
+    font-family: "Montserrat",sans-serif;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+@media (max-width:575px){
+    h1{
+        font-size: 1.25rem;
+    }
 }
