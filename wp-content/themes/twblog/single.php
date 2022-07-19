@@ -32,5 +32,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">  
+            <div class="col col-lg-8 col-sm-8 mx-auto py-4">
+                <?php echo do_shortcode("[devComment]"); ?>
+            </div>
+        </div>
     </div>
 <?php get_footer(); ?>

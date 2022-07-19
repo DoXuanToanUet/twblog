@@ -22,5 +22,9 @@ function init_theme(){
 
 add_action('init', 'init_theme');
 
+
 require get_template_directory() . '/inc-function/inc-devpost.php';
 require get_template_directory() . '/inc-function/inc-archivepost.php';
+require get_template_directory() . '/custom/custom-comment.php';
+require get_template_directory() . '/inc-function/inc-devComment.php';
+

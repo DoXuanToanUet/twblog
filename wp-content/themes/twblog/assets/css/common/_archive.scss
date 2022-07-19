@@ -4,3 +4,27 @@
         flex-direction: column;
     }
 }
+.tw-form-comment textarea{
+    width: 100%;
+}
+.tw-input input{
+    width: 50%;
+}
+.review-customer{
+    ul{
+        padding-left: 0px;
+    }
+}
+.reply-text,.reply-date{
+    a{
+        color: #8c8c8c;
+    }
+}
+.qtv{
+    margin-top: 6px;
+    padding: 2px 10px;
+    background:green;
+    color: #fff;
+    display: table;
+    font-size: 12px;
+}
