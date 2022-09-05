@@ -36,6 +36,8 @@
                 $("body").toggleClass("no-scroll");
             // }
         });
+        
+       
     })
     
 })(jQuery);

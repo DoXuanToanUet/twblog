@@ -38,3 +38,113 @@
         wp_nav_menu(array('theme_location' => 'mainmenu', 'container' => ''));
     endif; ?>          
 </div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<style>
+    #address-parent,#address-child,#address-child2{
+        min-width:300px !important;
+    }
+    .select2-results__options{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+    .select2-results__option{
+        width:calc(100%/2 - 5px);
+        font-size:12px;
+    }
+    .select2-search__field{
+        padding:6px;
+        font-size:14px;
+    }
+</style>
+<?php 
+    $path =  get_template_directory_uri().'/city.json';
+    $json = file_get_contents($path);
+    $city = json_decode($json, true);
+    // echo "<pre>";
+    // var_dump($city);
+    // echo "</pre>";
+?>
+<div class="container">
+    <select name="" id="address-parent">
+        <option value="disable">Tỉnh/Thành phố</option>
+        <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+        <?php     
+            foreach ($city as $key => $value) {
+                
+                ?>
+                    <option value="<?php echo $key; ?>"> <?php  echo $value['name']; ?> </option>
+                <?php 
+            } 
+        ?>
+    </select>
+    <select name="" id="address-child">
+        <option value="disable">Quận/Huyện</option>
+    </select>
+    <select name="" id="address-child2">
+        <option value="disable">Xã/Phường</option>
+    </select>
+    <button class="btn btn-info address-btn">Submit</buttop>
+</div>
+
+    <script>
+        city = <?php echo json_encode($city); ?>;
+        console.log(city);
+        
+        (function($) {
+            $(document).ready(function(){ 
+                $("#address-parent,#address-child,#address-child2").select2({
+                    // placeholder: "Select a programming language",
+                    allowClear: true,
+                    width: 'resolve' 
+                });
+                $('#address-parent').one('select2:open', function(e) {
+                    $('input.select2-search__field').prop('placeholder', 'Nhập tỉnh thành để tìm nhanh');
+                });
+                $('body').on('change','#address-parent',function () {
+                    cityIndex  = $(this).val();
+                    // console.log(cityIndex);
+                    $('#address-child').find('option').remove();
+                    $('#address-child').append(`<option value="disable" disabled selected>Quận/Huyện</option>`);
+                    $('#address-child2').find('option').remove();
+                    $('#address-child2').append(`<option value="disable" disabled selected>Xã/Phường</option>`);
+                    arr=city[cityIndex].districts;
+                    // console.log(arr);
+                    arr.map( ( districtName , key )  => (
+                        $('#address-child').append(`
+                            <option value="${key}">${districtName.name}</option>
+                        `)
+                    ));
+                })
+
+
+                $('body').on('change','#address-child',function () {
+                    cityIndex =$('#address-parent').val();
+                    console.log(cityIndex);
+                    districtIndex  = $(this).val();
+                    console.log(districtIndex)
+                    $('#address-child2').find('option').remove();
+                    $('#address-child2').append(`<option value="disable" disabled selected>Xã/Phường</option>`);
+                    villageArr = city[cityIndex].districts[districtIndex].wards;
+                    console.log(villageArr);
+                    villageArr.map( ( villageName , key )  => (
+                        $('#address-child2').append(`
+                            <option value="${key}">${villageName.name}</option>
+                        `)
+                    ));
+                   
+                   
+                })
+                $('.address-btn').click( function(){
+                    // console.log("this active");
+                    var t1 = $("#address-parent option:selected").html();
+                    var t2 = $("#address-child option:selected").html();
+                    var t3 = $("#address-child2 option:selected").html();
+                    console.log(t1,t2,t3);
+                })
+            });
+        })( jQuery );
+       
+
+    </script>
