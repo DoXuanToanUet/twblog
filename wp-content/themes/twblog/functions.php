@@ -28,3 +28,5 @@ require get_template_directory() . '/inc-function/inc-archivepost.php';
 require get_template_directory() . '/custom/custom-comment.php';
 require get_template_directory() . '/inc-function/inc-devComment.php';
 
+// $test= 'this is a test';
+// echo  "<p>{$test}</p>";

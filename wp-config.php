@@ -1,4 +1,6 @@
 <?php
+define( 'WP_CACHE', true ); // Added by WP Rocket
+
 /**
  * The base configuration for WordPress
  *
@@ -20,7 +22,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wpold' );
+define( 'DB_NAME', 'twblog' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
